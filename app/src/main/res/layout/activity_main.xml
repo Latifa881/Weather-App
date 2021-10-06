@@ -54,7 +54,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:hint="Enter Your City Name"
+            android:hint="Enter an american city name"
             android:inputType="textAutoComplete" />
         <EditText
             android:id="@+id/etZIP"
@@ -65,7 +65,7 @@
             android:layout_marginRight="20dp"
             android:maxLength="5"
             android:gravity="center"
-            android:hint="Enter Your ZIP Code"
+            android:hint="Enter an american ZIP code"
             android:inputType="number" />
 
         <Button
@@ -111,17 +111,25 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:gravity="center|bottom"
             android:text="Clear Sky"
             android:textSize="30dp" />
+
+        <ImageView
+            android:id="@+id/weatherIcon"
+            android:layout_gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_weight="2"
+            android:src="@drawable/weather" />
 
         <TextView
             android:id="@+id/tvTemperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="8"
+            android:layout_weight="7"
             android:gravity="center"
             android:text="77°C"
             android:textSize="120dp" />
@@ -130,7 +138,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="2"
             android:orientation="horizontal"
             android:weightSum="2">

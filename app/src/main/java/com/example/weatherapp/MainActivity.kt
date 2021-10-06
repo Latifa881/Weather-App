@@ -2,8 +2,10 @@ package com.example.weatherapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
+import com.bumptech.glide.Glide
 import kotlinx.coroutines.*
 import org.json.JSONObject
 import java.lang.Exception
@@ -172,6 +174,11 @@ class MainActivity : AppCompatActivity() {
                 val sunrise=convertLongToTime(sys.getLong("sunrise"),"HH:mm a")
                 val sunset=convertLongToTime(sys.getLong("sunset"),"HH:mm a")
             val weatherStatus=jsonObject.getJSONArray("weather").getJSONObject(0).getString("description").capitalize()
+            val resizeImage = "http://openweathermap.org/img/w/" + jsonObject.getJSONArray("weather").getJSONObject(0).getString("icon") + ".png"
+            Log.d("myPic",resizeImage)
+            Glide.with(this@MainActivity)
+                .load(resizeImage)
+                .into(findViewById(R.id.weatherIcon))
 
             val wind=jsonObject.getJSONObject("wind").getString("speed")
 
