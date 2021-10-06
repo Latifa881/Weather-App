@@ -35,10 +35,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var btRetry:Button
 
      var isZipCode=true
-    var cityName="dammam"
+    var cityName="New York"
     var zipCode = "10001"//the Zip code for New York
     val API_KEY="f2763f64328617a339894577e9107052"
-    //https://api.openweathermap.org/data/2.5/weather?q=Dammam&appid=f2763f64328617a339894577e9107052
+    //https://api.openweathermap.org/data/2.5/weather?q=New York&units=metric&appid=f2763f64328617a339894577e9107052
     //https://api.openweathermap.org/data/2.5/weather?zip=10001&units=metric&appid=f2763f64328617a339894577e9107052
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
             llWeatherDetails.visibility=View.VISIBLE
             llFailureFetch.visibility=View.GONE
             zipCode = "10001"
-             cityName="dammam"
+             cityName="New York"
             requestApi()
         }
 
@@ -139,7 +139,7 @@ class MainActivity : AppCompatActivity() {
             weatherUrl="https://api.openweathermap.org/data/2.5/weather?zip=$zipCode&units=metric&appid=$API_KEY"
         }else{
 
-         weatherUrl="https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$API_KEY"}
+         weatherUrl="https://api.openweathermap.org/data/2.5/weather?q=$cityName&units=metric&appid=$API_KEY"}
 
         var response=""
         try {
